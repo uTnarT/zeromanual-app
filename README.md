@@ -16,7 +16,7 @@ You may see a Windows SmartScreen warning since this app isn't code-signed yet �
 
 Showcase:https://docs.superhuman.com/d/_dE8X-62yM30/LeaniZ-Flow-Studio_suC8odOe
 
-📧 thanhtuhaibabon@gmail.com(contac)
+📧 thanhtuhaibabon@gmail.com(contact to by Lifetime Edition)
 
 ---
 
@@ -34,4 +34,4 @@ Bạn có thể thấy cảnh báo SmartScreen của Windows vì app chưa có c
 
 Showcase:https://docs.superhuman.com/d/_dE8X-62yM30/LeaniZ-Flow-Studio_suC8odOe (Ấn các nút tam giác toggle để xem bản dịch)
 
-📧 thanhtuhaibabon@gmail.com(contact)
+📧 thanhtuhaibabon@gmail.com(Liên hệ để mua bản Lifetime Edition)
