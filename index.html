@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +14,12 @@
             --accent-blue: #58a6ff;
             --accent-green: #238636;
             --accent-green-hover: #2ea043;
-            --badge-bg: rgba(56, 139, 253, 0.15);
+            --badge-bg: rgba(56, 139, 253, 0.12);
             --badge-text: #58a6ff;
+            --tag-free-bg: rgba(35, 134, 54, 0.15);
+            --tag-free-text: #3fb950;
+            --tag-pro-bg: rgba(163, 113, 247, 0.15);
+            --tag-pro-text: #d2a8ff;
         }
 
         * {
@@ -37,10 +41,43 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 860px;
             width: 100%;
         }
 
+        /* Language Switcher */
+        .lang-control {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .lang-switcher {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3px;
+            display: inline-flex;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-blue);
+            color: #ffffff;
+        }
+
+        /* Header */
         header {
             text-align: center;
             margin-bottom: 40px;
@@ -50,12 +87,13 @@
             display: inline-block;
             background-color: var(--badge-bg);
             color: var(--badge-text);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            padding: 6px 14px;
+            padding: 4px 12px;
             border-radius: 20px;
             margin-bottom: 16px;
-            border: 1px solid rgba(56, 139, 253, 0.3);
+            border: 1px solid rgba(56, 139, 253, 0.25);
+            letter-spacing: 0.5px;
         }
 
         h1 {
@@ -69,55 +107,74 @@
         }
 
         .subtitle {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto;
         }
 
+        /* App Main Card */
         .app-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 32px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
         .app-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
+            align-items: center;
+            margin-bottom: 16px;
             flex-wrap: wrap;
             gap: 10px;
         }
 
         .app-title {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #ffffff;
         }
 
-        .edition-badge {
-            background: rgba(35, 134, 54, 0.2);
-            color: #3fb950;
-            border: 1px solid rgba(63, 185, 80, 0.3);
+        .tags-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .badge {
             padding: 4px 10px;
             border-radius: 6px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-free {
+            background: var(--tag-free-bg);
+            color: var(--tag-free-text);
+            border: 1px solid rgba(63, 185, 80, 0.3);
+        }
+
+        .badge-pro {
+            background: var(--tag-pro-bg);
+            color: var(--tag-pro-text);
+            border: 1px solid rgba(163, 113, 247, 0.3);
         }
 
         .description {
             color: var(--text-secondary);
             margin-bottom: 24px;
-            font-size: 1rem;
+            font-size: 0.98rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 20px;
         }
 
+        /* Feature Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 16px;
             margin-bottom: 28px;
         }
@@ -140,26 +197,30 @@
             color: var(--text-secondary);
         }
 
+        /* Call To Action */
         .cta-section {
             display: flex;
             gap: 16px;
             align-items: center;
             flex-wrap: wrap;
+            background: rgba(0,0,0,0.2);
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
 
         .btn-primary {
             background-color: var(--accent-green);
             color: #ffffff;
             font-weight: 600;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 6px;
             text-decoration: none;
             transition: background-color 0.2s ease;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            border: none;
-            cursor: pointer;
+            font-size: 0.9rem;
         }
 
         .btn-primary:hover {
@@ -167,15 +228,19 @@
         }
 
         .system-req {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-secondary);
+        }
+
+        .lang-vi {
+            display: none;
         }
 
         footer {
             text-align: center;
             color: var(--text-secondary);
             font-size: 0.85rem;
-            margin-top: 40px;
+            margin-top: 30px;
             border-top: 1px solid var(--border-color);
             padding-top: 20px;
         }
@@ -184,48 +249,72 @@
 <body>
 
 <div class="container">
+    <!-- Nút chọn ngôn ngữ -->
+    <div class="lang-control">
+        <div class="lang-switcher">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+            <button class="lang-btn" id="btn-vi" onclick="setLang('vi')">Tiếng Việt</button>
+        </div>
+    </div>
+
+    <!-- Tiêu đề -->
     <header>
         <span class="logo-badge">ZERO MANUAL WORKFLOW</span>
         <h1>zeromanual-app</h1>
-        <p class="subtitle">Tự động hóa các tác vụ thủ công lặp đi lặp lại. Đưa thao tác làm việc thủ công của bạn về con số 0.</p>
+        <p class="subtitle lang-en">Eliminate repetitive manual tasks and automate your daily workflow effortlessly. Bring manual labor down to zero.</p>
+        <p class="subtitle lang-vi">Tự động hóa các tác vụ lặp đi lặp lại và tối ưu hóa quy trình làm việc hàng ngày. Đưa các thao tác thủ công về con số 0.</p>
     </header>
 
+    <!-- Khung ứng dụng -->
     <main>
         <div class="app-card">
             <div class="app-header">
                 <div class="app-title">LeaniZ_Flow Studio</div>
-                <span class="edition-badge">FREE EDITION</span>
+                <div class="tags-group">
+                    <span class="badge badge-free">Free Edition</span>
+                    <span class="badge badge-pro">Lifetime Purchase</span>
+                </div>
             </div>
             
-            <p class="description">
-                Giải pháp tự động hóa đổi tên & phân loại file hàng loạt dành riêng cho Video Editor, DITs và các công việc xử lý dữ liệu dung lượng lớn.
+            <p class="description lang-en">
+                An automated batch file renaming & sorting solution crafted for video editors, DITs, and heavy file-volume workflows.
+            </p>
+            <p class="description lang-vi">
+                Giải pháp tự động hóa đổi tên và sắp xếp tệp hàng loạt dành riêng cho Video Editor, DIT và các công việc xử lý lượng dữ liệu lớn.
             </p>
 
+            <!-- Grid tính năng -->
             <div class="features-grid">
                 <div class="feature-item">
-                    <h3>⚡ Xử lý hàng loạt</h3>
-                    <p>Tải lên, đổi tên và di chuyển hàng nghìn tập tin chỉ trong một cú nhấp chuột.</p>
+                    <h3>⚡ Batch Processing</h3>
+                    <p class="lang-en">Upload, rename, and organize thousands of files with a single click.</p>
+                    <p class="lang-vi">Tải lên, đổi tên và di chuyển hàng nghìn tệp chỉ trong một cú nhấp chuột.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>🎬 Chuẩn hóa cho Video Editor</h3>
-                    <p>Sắp xếp thư mục footage và tài nguyên dựng phim tự động, khoa học.</p>
+                    <h3>🎬 Video Editors Tailored</h3>
+                    <p class="lang-en">Structure raw footage and project assets systematically and stress-free.</p>
+                    <p class="lang-vi">Sắp xếp thư mục footage và tài nguyên dựng phim tự động, khoa học.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>🔒 An toàn dữ liệu</h3>
-                    <p>Chạy trực tiếp trên máy local, đảm bảo tốc độ tối đa và tuyệt đối bảo mật.</p>
+                    <h3>🔒 Privacy First</h3>
+                    <p class="lang-en">Runs locally on your system. Maximum speed with zero data leakage.</p>
+                    <p class="lang-vi">Xử lý hoàn toàn trên máy cục bộ. Tốc độ tối đa và tuyệt đối an toàn.</p>
                 </div>
             </div>
 
+            <!-- Nút Tải về -->
             <div class="cta-section">
-                <!-- Thay link file cài đặt (.exe / .zip) của bạn vào chỗ dấu # trong href="#" bên dưới -->
+                <!-- Thay link tải EXE (GitHub Release) của bạn vào thuộc tính href bên dưới -->
                 <a href="#" class="btn-primary">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                         <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                         <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
                     </svg>
-                    Tải về miễn phí
+                    <span class="lang-en">Download Free Edition</span>
+                    <span class="lang-vi">Tải về bản Miễn phí</span>
                 </a>
-                <span class="system-req">Hỗ trợ: Windows 10/11 (64-bit)</span>
+                <span class="system-req lang-en">Windows 10/11 (64-bit) · Microsoft WebView2 Required</span>
+                <span class="system-req lang-vi">Hỗ trợ: Windows 10/11 (64-bit) · Yêu cầu WebView2</span>
             </div>
         </div>
     </main>
@@ -234,6 +323,27 @@
         <p>© uTnarT · Project zeromanual-app</p>
     </footer>
 </div>
+
+<script>
+    function setLang(lang) {
+        const enElems = document.querySelectorAll('.lang-en');
+        const viElems = document.querySelectorAll('.lang-vi');
+        const btnEn = document.getElementById('btn-en');
+        const btnVi = document.getElementById('btn-vi');
+
+        if (lang === 'vi') {
+            enElems.forEach(el => el.style.display = 'none');
+            viElems.forEach(el => el.style.display = 'block');
+            btnVi.classList.add('active');
+            btnEn.classList.remove('active');
+        } else {
+            viElems.forEach(el => el.style.display = 'none');
+            enElems.forEach(el => el.style.display = 'block');
+            btnEn.classList.add('active');
+            btnVi.classList.remove('active');
+        }
+    }
+</script>
 
 </body>
 </html>
