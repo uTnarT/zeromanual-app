@@ -14,14 +14,17 @@
             --accent-blue: #58a6ff;
             --accent-green: #238636;
             --accent-green-hover: #2ea043;
+            --accent-yellow: #d29922;
             --badge-bg: rgba(56, 139, 253, 0.12);
             --badge-text: #58a6ff;
             --tag-free-bg: rgba(35, 134, 54, 0.15);
             --tag-free-text: #3fb950;
             --tag-pro-bg: rgba(163, 113, 247, 0.15);
             --tag-pro-text: #d2a8ff;
-            --pro-box-bg: rgba(163, 113, 247, 0.08);
-            --pro-box-border: rgba(163, 113, 247, 0.3);
+            --pro-box-bg: rgba(163, 113, 247, 0.12);
+            --pro-box-border: rgba(163, 113, 247, 0.4);
+            --warn-box-bg: rgba(210, 153, 34, 0.1);
+            --warn-box-border: rgba(210, 153, 34, 0.35);
         }
 
         * {
@@ -47,7 +50,7 @@
             width: 100%;
         }
 
-        /* Language Switcher */
+        /* Language Control */
         .lang-control {
             display: flex;
             justify-content: flex-end;
@@ -103,9 +106,7 @@
             font-weight: 800;
             letter-spacing: -0.5px;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, #ffffff 0%, #8b949e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff;
         }
 
         .subtitle {
@@ -173,10 +174,9 @@
             padding-bottom: 20px;
         }
 
-        /* Feature Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 16px;
             margin-bottom: 24px;
         }
@@ -199,51 +199,57 @@
             color: var(--text-secondary);
         }
 
-        /* PRO Highlight Callout Box */
+        /* Khung Chú Thích Mua Bản PRO */
         .pro-callout {
             background: var(--pro-box-bg);
             border: 1px solid var(--pro-box-border);
             border-radius: 8px;
             padding: 18px 20px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             gap: 14px;
         }
 
         .pro-icon {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             line-height: 1;
         }
 
         .pro-content h4 {
             color: var(--tag-pro-text);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             font-weight: 700;
             margin-bottom: 4px;
         }
 
         .pro-content p {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-primary);
         }
 
         .email-link {
-            color: var(--accent-blue);
+            color: #58a6ff;
             text-decoration: underline;
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        /* Call To Action */
+        /* Call To Action Area */
         .cta-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .cta-action-line {
             display: flex;
             gap: 16px;
             align-items: center;
             flex-wrap: wrap;
-            background: rgba(0,0,0,0.2);
-            padding: 16px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
         }
 
         .btn-primary {
@@ -269,7 +275,43 @@
             color: var(--text-secondary);
         }
 
+        .req-highlight {
+            color: var(--accent-blue);
+            font-weight: 500;
+        }
+
+        /* Khung Thông Báo Cảnh Báo SmartScreen */
+        .smartscreen-notice {
+            background: var(--warn-box-bg);
+            border: 1px solid var(--warn-box-border);
+            border-radius: 6px;
+            padding: 12px 16px;
+            font-size: 0.83rem;
+            color: #e6edf3;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .smartscreen-icon {
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        .smartscreen-text code {
+            background: rgba(255,255,255,0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--accent-yellow);
+            font-weight: 600;
+        }
+
+        /* Language Toggle Display Rules */
         .lang-vi {
+            display: block;
+        }
+
+        .lang-en {
             display: none;
         }
 
@@ -286,15 +328,15 @@
 <body>
 
 <div class="container">
-    <!-- Switcher Ngôn ngữ -->
+    <!-- Nút Chuyển Ngôn Ngữ -->
     <div class="lang-control">
         <div class="lang-switcher">
-            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
-            <button class="lang-btn" id="btn-vi" onclick="setLang('vi')">Tiếng Việt</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')">English</button>
+            <button class="lang-btn active" id="btn-vi" onclick="setLang('vi')">Tiếng Việt</button>
         </div>
     </div>
 
-    <!-- Tiêu đề -->
+    <!-- Header Trang Web -->
     <header>
         <span class="logo-badge">ZERO MANUAL WORKFLOW</span>
         <h1>zeromanual-app</h1>
@@ -302,7 +344,7 @@
         <p class="subtitle lang-vi">Tự động hóa các tác vụ lặp đi lặp lại và tối ưu hóa quy trình làm việc hàng ngày. Đưa các thao tác thủ công về con số 0.</p>
     </header>
 
-    <!-- Khung ứng dụng chính -->
+    <!-- Thẻ Sản Phẩm Chính -->
     <main>
         <div class="app-card">
             <div class="app-header">
@@ -320,7 +362,7 @@
                 Giải pháp tự động hóa đổi tên và sắp xếp tệp hàng loạt dành riêng cho Video Editor, DIT và các công việc xử lý lượng dữ liệu lớn.
             </p>
 
-            <!-- Tính năng chính -->
+            <!-- Tính Năng Nổi Bật -->
             <div class="features-grid">
                 <div class="feature-item">
                     <h3>⚡ Batch Processing</h3>
@@ -339,7 +381,7 @@
                 </div>
             </div>
 
-            <!-- CHÚ THÍCH NỔI BẬT: MUA BẢN UNDO / REDO -->
+            <!-- MUA BẢN UNDO / REDO -->
             <div class="pro-callout">
                 <div class="pro-icon">💎</div>
                 <div class="pro-content">
@@ -349,23 +391,36 @@
                         Contact via email <a href="mailto:thanhtuhaibabon@gmail.com" class="email-link">thanhtuhaibabon@gmail.com</a> to purchase the Lifetime Edition with advanced Undo/Redo capabilities.
                     </p>
                     <p class="lang-vi">
-                        Liên hệ qua mail <a href="mailto:thanhtuhaibabon@gmail.com" class="email-link">thanhtuhaibabon@gmail.com</a> để mua bản có tính năng Undo Redo sử dụng trọn đời.
+                        Liên hệ qua mail <a href="mailto:thanhtuhaibabon@gmail.com" class="email-link">thanhtuhaibabon@gmail.com</a> để mua bản có tính năng Undo Redo.
                     </p>
                 </div>
             </div>
 
-            <!-- Nút Tải về đã áp dụng direct link từ Release của bạn -->
+            <!-- Khu Vực Tải Về & Cảnh Báo -->
             <div class="cta-section">
-                <a href="https://github.com/uTnarT/zeromanual-app/releases/download/v1.0.0/LeaniZ_Flow.Studio.Setup.1.0.0.exe" class="btn-primary">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                    </svg>
-                    <span class="lang-en">Download Free Edition</span>
-                    <span class="lang-vi">Tải về bản Miễn phí</span>
-                </a>
-                <span class="system-req lang-en">Windows 10/11 (64-bit) · Microsoft WebView2 Required</span>
-                <span class="system-req lang-vi">Hỗ trợ: Windows 10/11 (64-bit) · Yêu cầu WebView2</span>
+                <div class="cta-action-line">
+                    <a href="https://github.com/uTnarT/zeromanual-app/releases/download/v1.0.0/LeaniZ_Flow.Studio.Setup.1.0.0.exe" class="btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                        </svg>
+                        <span class="lang-en">Download Free Edition</span>
+                        <span class="lang-vi">Tải về bản Miễn phí</span>
+                    </a>
+                    <span class="system-req lang-en">Windows 10/11 (64-bit) · Requires WebView2 <span class="req-highlight">(Pre-installed on most modern Win 10/11 PCs)</span></span>
+                    <span class="system-req lang-vi">Hỗ trợ: Windows 10/11 (64-bit) · Yêu cầu WebView2 <span class="req-highlight">(Các máy Win 10/11 hiện tại hầu như đã có sẵn)</span></span>
+                </div>
+
+                <!-- Ghi Chú SmartScreen -->
+                <div class="smartscreen-notice">
+                    <span class="smartscreen-icon">⚠️</span>
+                    <div class="smartscreen-text lang-en">
+                        You may see a <strong>Windows SmartScreen warning</strong> because the app doesn't have a paid digital signature — this is completely normal for independent utility tools. Simply click <code>More info</code> → <code>Run anyway</code> to proceed with installation.
+                    </div>
+                    <div class="smartscreen-text lang-vi">
+                        Bạn có thể thấy cảnh báo <strong>SmartScreen của Windows</strong> vì app chưa có chữ ký số — đây là điều bình thường với các tool nhỏ độc lập. Bấm <code>More info</code> → <code>Run anyway</code> để tiếp tục cài đặt.
+                    </div>
+                </div>
             </div>
         </div>
     </main>
