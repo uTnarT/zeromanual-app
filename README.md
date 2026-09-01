@@ -14,7 +14,7 @@ Eliminate repetitive manual tasks and automate your daily workflow effortlessly.
 
 You may see a Windows SmartScreen warning since this app isn't code-signed yet — this is normal for small independent tools. Click 'More info' → 'Run anyway' to proceed. The source and build process are fully transparent
 
-**Showcase:https://docs.superhuman.com/d/_dE8X-62yM30/LeaniZ-Flow-Studio_suC8odOe
+Showcase:https://docs.superhuman.com/d/_dE8X-62yM30/LeaniZ-Flow-Studio_suC8odOe
 
 📧 thanhtuhaibabon@gmail.com(contac)
 
@@ -32,6 +32,6 @@ You may see a Windows SmartScreen warning since this app isn't code-signed yet �
 
 Bạn có thể thấy cảnh báo SmartScreen của Windows vì app chưa có chữ ký số — đây là điều bình thường với các tool nhỏ độc lập. Bấm 'More info' → 'Run anyway' để tiếp tục. Toàn bộ quy trình build đều minh bạch
 
-**Showcase:https://docs.superhuman.com/d/_dE8X-62yM30/LeaniZ-Flow-Studio_suC8odOe (Ấn các nút tam giác toggle để xem bản dịch)
+Showcase:https://docs.superhuman.com/d/_dE8X-62yM30/LeaniZ-Flow-Studio_suC8odOe (Ấn các nút tam giác toggle để xem bản dịch)
 
 📧 thanhtuhaibabon@gmail.com(contact)
