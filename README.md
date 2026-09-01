@@ -11,6 +11,9 @@ Eliminate repetitive manual tasks and automate your daily workflow effortlessly.
 **Platform:** Windows 10/11 (64-bit) only. Requires Microsoft WebView2 Runtime — already present on virtually every updated Windows 10/11 machine, so nothing to download in most cases.
 
 **Support policy:** Software bugs → fixed free. Issues from your system/OS changes → best-effort help, fee only if it needs significant work, always discussed upfront.
+
+**You may see a Windows SmartScreen warning since this app isn't code-signed yet — this is normal for small independent tools. Click 'More info' → 'Run anyway' to proceed. The source and build process are fully transparent
+
 **Showcase:https://docs.superhuman.com/d/_dE8X-62yM30/LeaniZ-Flow-Studio_suC8odOe
 
 📧 thanhtuhaibabon@gmail.com(contac)
@@ -26,6 +29,9 @@ Eliminate repetitive manual tasks and automate your daily workflow effortlessly.
 **Nền tảng:** Chỉ chạy Windows 10/11 (64-bit). Cần Microsoft WebView2 Runtime — hầu như đã có sẵn trên mọi máy Windows 10/11 đã cập nhật, nên đa số trường hợp không cần tải gì thêm.
 
 **Chính sách hỗ trợ:** Lỗi phần mềm → sửa miễn phí. Lỗi do hệ thống/OS của bạn → hỗ trợ hết sức, chỉ tính phí nếu tốn nhiều công sức, luôn báo trước.
-**Showcase:https://docs.superhuman.com/d/_dE8X-62yM30/LeaniZ-Flow-Studio_suC8odOe
+
+**Bạn có thể thấy cảnh báo SmartScreen của Windows vì app chưa có chữ ký số — đây là điều bình thường với các tool nhỏ độc lập. Bấm 'More info' → 'Run anyway' để tiếp tục. Toàn bộ quy trình build đều minh bạch
+
+**Showcase:https://docs.superhuman.com/d/_dE8X-62yM30/LeaniZ-Flow-Studio_suC8odOe (Ấn các nút tam giác toggle để xem bản dịch)
 
 📧 thanhtuhaibabon@gmail.com(contact)
