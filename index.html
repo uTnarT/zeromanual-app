@@ -1,30 +1,239 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23facc15'/><path d='M30 45 C30 35 40 25 50 25 C60 25 70 35 70 45 L70 55 L30 55 Z' fill='%23111'/><rect x='20' y='50' width='60' height='35' rx='10' fill='%23111'/><circle cx='50' cy='67' r='6' fill='%23facc15'/></svg>" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Locket Iso - Đăng Ảnh & Video Lên Locket Web (Gold Unlocked)</title>
-  <meta name="description"
-    content="Locket Dio Web Client - Đăng ảnh và video từ máy tính/thư viện lên Locket Widget không giới hạn, tùy chỉnh caption đầy màu sắc, tải ảnh HD và mô phỏng widget iOS." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeroManual — Automated Workflow Studio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #238636;
+            --accent-green-hover: #2ea043;
+            --badge-bg: rgba(56, 139, 253, 0.15);
+            --badge-text: #58a6ff;
+        }
 
-  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-  <meta name="theme-color" content="#0d0d0f" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-badge {
+            display: inline-block;
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(56, 139, 253, 0.3);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 0%, #8b949e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .app-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .app-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .edition-badge {
+            background: rgba(35, 134, 54, 0.2);
+            color: #3fb950;
+            border: 1px solid rgba(63, 185, 80, 0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .description {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .feature-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .feature-item h3 {
+            font-size: 0.95rem;
+            color: var(--accent-blue);
+            margin-bottom: 6px;
+        }
+
+        .feature-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-green);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-green-hover);
+        }
+
+        .system-req {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+    </style>
 </head>
+<body>
 
-<body class="bg-dark text-light antialiased selection:bg-yellow-400 selection:text-black">
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+<div class="container">
+    <header>
+        <span class="logo-badge">ZERO MANUAL WORKFLOW</span>
+        <h1>zeromanual-app</h1>
+        <p class="subtitle">Tự động hóa các tác vụ thủ công lặp đi lặp lại. Đưa thao tác làm việc thủ công của bạn về con số 0.</p>
+    </header>
+
+    <main>
+        <div class="app-card">
+            <div class="app-header">
+                <div class="app-title">LeaniZ_Flow Studio</div>
+                <span class="edition-badge">FREE EDITION</span>
+            </div>
+            
+            <p class="description">
+                Giải pháp tự động hóa đổi tên & phân loại file hàng loạt dành riêng cho Video Editor, DITs và các công việc xử lý dữ liệu dung lượng lớn.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>⚡ Xử lý hàng loạt</h3>
+                    <p>Tải lên, đổi tên và di chuyển hàng nghìn tập tin chỉ trong một cú nhấp chuột.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🎬 Chuẩn hóa cho Video Editor</h3>
+                    <p>Sắp xếp thư mục footage và tài nguyên dựng phim tự động, khoa học.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🔒 An toàn dữ liệu</h3>
+                    <p>Chạy trực tiếp trên máy local, đảm bảo tốc độ tối đa và tuyệt đối bảo mật.</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <!-- Thay link file cài đặt (.exe / .zip) của bạn vào chỗ dấu # trong href="#" bên dưới -->
+                <a href="#" class="btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                    </svg>
+                    Tải về miễn phí
+                </a>
+                <span class="system-req">Hỗ trợ: Windows 10/11 (64-bit)</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© uTnarT · Project zeromanual-app</p>
+    </footer>
+</div>
+
 </body>
-
 </html>
