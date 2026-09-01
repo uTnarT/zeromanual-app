@@ -20,6 +20,8 @@
             --tag-free-text: #3fb950;
             --tag-pro-bg: rgba(163, 113, 247, 0.15);
             --tag-pro-text: #d2a8ff;
+            --pro-box-bg: rgba(163, 113, 247, 0.08);
+            --pro-box-border: rgba(163, 113, 247, 0.3);
         }
 
         * {
@@ -80,7 +82,7 @@
         /* Header */
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .logo-badge {
@@ -176,7 +178,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 16px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         .feature-item {
@@ -195,6 +197,41 @@
         .feature-item p {
             font-size: 0.85rem;
             color: var(--text-secondary);
+        }
+
+        /* PRO Highlight Callout Box */
+        .pro-callout {
+            background: var(--pro-box-bg);
+            border: 1px solid var(--pro-box-border);
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .pro-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .pro-content h4 {
+            color: var(--tag-pro-text);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .pro-content p {
+            font-size: 0.88rem;
+            color: var(--text-primary);
+        }
+
+        .email-link {
+            color: var(--accent-blue);
+            text-decoration: underline;
+            font-weight: 600;
         }
 
         /* Call To Action */
@@ -249,7 +286,7 @@
 <body>
 
 <div class="container">
-    <!-- Nút chọn ngôn ngữ -->
+    <!-- Switcher Ngôn ngữ -->
     <div class="lang-control">
         <div class="lang-switcher">
             <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
@@ -265,7 +302,7 @@
         <p class="subtitle lang-vi">Tự động hóa các tác vụ lặp đi lặp lại và tối ưu hóa quy trình làm việc hàng ngày. Đưa các thao tác thủ công về con số 0.</p>
     </header>
 
-    <!-- Khung ứng dụng -->
+    <!-- Khung ứng dụng chính -->
     <main>
         <div class="app-card">
             <div class="app-header">
@@ -283,7 +320,7 @@
                 Giải pháp tự động hóa đổi tên và sắp xếp tệp hàng loạt dành riêng cho Video Editor, DIT và các công việc xử lý lượng dữ liệu lớn.
             </p>
 
-            <!-- Grid tính năng -->
+            <!-- Tính năng chính -->
             <div class="features-grid">
                 <div class="feature-item">
                     <h3>⚡ Batch Processing</h3>
@@ -302,10 +339,24 @@
                 </div>
             </div>
 
-            <!-- Nút Tải về -->
+            <!-- CHÚ THÍCH NỔI BẬT: MUA BẢN UNDO / REDO -->
+            <div class="pro-callout">
+                <div class="pro-icon">💎</div>
+                <div class="pro-content">
+                    <h4 class="lang-en">Need Undo / Redo Features?</h4>
+                    <h4 class="lang-vi">Bạn cần tính năng Undo / Redo?</h4>
+                    <p class="lang-en">
+                        Contact via email <a href="mailto:thanhtuhaibabon@gmail.com" class="email-link">thanhtuhaibabon@gmail.com</a> to purchase the Lifetime Edition with advanced Undo/Redo capabilities.
+                    </p>
+                    <p class="lang-vi">
+                        Liên hệ qua mail <a href="mailto:thanhtuhaibabon@gmail.com" class="email-link">thanhtuhaibabon@gmail.com</a> để mua bản có tính năng Undo Redo sử dụng trọn đời.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Nút Tải về đã áp dụng direct link từ Release của bạn -->
             <div class="cta-section">
-                <!-- Thay link tải EXE (GitHub Release) của bạn vào thuộc tính href bên dưới -->
-                <a href="#" class="btn-primary">
+                <a href="https://github.com/uTnarT/zeromanual-app/releases/download/v1.0.0/LeaniZ_Flow.Studio.Setup.1.0.0.exe" class="btn-primary">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                         <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                         <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
